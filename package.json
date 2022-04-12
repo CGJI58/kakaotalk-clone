@@ -1,0 +1,22 @@
+{
+  "name": "kakaotalk-clone",
+  "version": "1.0.0",
+  "description": "clone kakaotalk with nodeJS",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/init.js"
+  },
+  "repository": "https://github.com/CGJI58/kakaotalk-clone",
+  "author": "CGJI58 <leemsk22@naver.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "nodemon": "^2.0.7"
+  }
+}
