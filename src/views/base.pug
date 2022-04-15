@@ -8,22 +8,9 @@ html(lang="ko")
             block header
         nav
             ul
-                li
-                    a(href="/") home
-                li
-                    a(href="/login") Log in
-                li
-                    a(href="/join") Join
-                li
-                    a(href="/users") Friends
-                li
-                    a(href="/chats") chats
-                li
-                    a(href="/users/find") Find
-                li
-                    a(href="/users/more") More
-                li
-                    a(href="/users/settings") Settings
+                block navBtnsBeforeLogin
+                block navigationBar
+
             
         main
             block main
