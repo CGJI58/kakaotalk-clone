@@ -1,4 +1,8 @@
 extends base
 
 block main
-    span This is chats page.
+    ul 
+        each chatRoom in fakeDB
+            li= chatRoom.title
+        else
+            li no chats.
