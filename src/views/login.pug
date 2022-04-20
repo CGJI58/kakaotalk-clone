@@ -1,14 +1,16 @@
 extends base
 
 block header
-    a(href="/join") Join
-
-block navBtnsBeforeLogin 
-    li
-        a(href="/") home
-    li
-        a(href="/login") Log in
+    nav 
+        ul
+            li 
+                a(href="/join") Join
+            li
+                a(href="/") home
+            li 
+                a(href="/login") Log in
 
 
 block main
-    span This is Log in page.
+    form(method="POST")
+        input(type="submit" value="Log in")

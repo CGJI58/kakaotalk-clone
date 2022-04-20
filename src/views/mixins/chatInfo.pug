@@ -1,0 +1,15 @@
+mixin room(room)
+    div
+        h4
+            a(href=`chats/${room.id}`)=room.participants
+            
+        ul 
+            li
+                h5 #{room.lastChat}
+
+            if (room.headCount === 1)
+                li Private
+                
+            else
+                li #{room.headCount + 1} Participants
+            

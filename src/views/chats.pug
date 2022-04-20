@@ -1,8 +1,9 @@
 extends base
+include mixins/chatInfo
 
 block main
     ul 
-        each chatRoom in fakeDB
-            li= chatRoom.title
+        each room in rooms
+            +room(room)
         else
             li no chats.

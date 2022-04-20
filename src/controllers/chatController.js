@@ -1,24 +1,27 @@
+let rooms = [
+  {
+    participants: ["Elon Musk"],
+    headCount: 1,
+    lastChat: "Doge coin gazua!",
+    id: 1,
+  },
+  {
+    participants: ["Warron Buffet", "Bill Gates"],
+    headCount: 2,
+    lastChat: "Only Jon-bu is life way.",
+    id: 2,
+  },
+];
+
 export const chats = (req, res) => {
-  const fakeDB = [
-    {
-      title: "Tory",
-      headCount: 1,
-    },
-    {
-      title: "Watson",
-      headCount: 1,
-    },
-  ];
-  return res.render("chats", { pageTitle: "Chats", fakeDB });
+  return res.render("chats", { pageTitle: "Chats", rooms });
 };
 
-export const chatRoom = (req, res) => {
-  return res.render("chat", {
-    pageTitle: `${req.params.id}`,
-    chatRoomId: `${req.params.id}`,
+export const chatroom = (req, res) => {
+  const { id } = req.params;
+  const room = rooms[id - 1];
+  return res.render("chatRoom", {
+    pageTitle: `chat with ${room.title}`,
+    chatRoomId: id,
   });
-};
-
-export const deleteChatRoom = (req, res) => {
-  return res.send(`Delete room : ${req.params.id}`);
 };
