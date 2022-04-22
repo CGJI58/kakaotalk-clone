@@ -9,6 +9,7 @@
   "author": "CGJI58 <leemsk22@naver.com>",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
     "mongoose": "^6.3.0",
     "morgan": "^1.10.0",
