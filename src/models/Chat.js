@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const chatSchema = new mongoose.Schema({
-  title: String,
-  multiple: Boolean,
+  title: String, //자동이지만 수정 가능하도록
+  multiple: Boolean, //자동
   participants: {
-    names: [String],
-    headCount: Number,
+    names: [String], //수동
+    headCount: Number, //자동
   },
   dialog: [
     {

@@ -1,0 +1,7 @@
+extends base
+
+block main 
+    form(method="POST")
+        input(required, placeholder="Friend's name. Separate by comma(,)", type="text", name="friends")
+        //- 나중에 datalist type으로 변경하고 friends 자료 받아올 것.
+        input(type="submit", value="Create")

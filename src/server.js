@@ -1,5 +1,3 @@
-import "./db";
-import "./models/Chat";
 import express from "express";
 import morgan from "morgan";
 import rootRouter from "./routers/rootRouter";

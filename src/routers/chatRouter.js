@@ -1,9 +1,18 @@
 import express from "express";
-import { chats, chatroom } from "../controllers/chatController";
+import {
+  chats,
+  chatRoom,
+  getCreateChatRoom,
+  postCreateChatRoom,
+} from "../controllers/chatController";
 
 const chatRouter = express.Router();
 
 chatRouter.get("/", chats);
-chatRouter.get("/:id(\\d+)", chatroom);
+chatRouter
+  .route("/createchatroom")
+  .get(getCreateChatRoom)
+  .post(postCreateChatRoom);
+chatRouter.get("/:id(\\d+)", chatRoom);
 
 export default chatRouter;

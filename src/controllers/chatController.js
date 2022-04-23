@@ -1,27 +1,44 @@
-let rooms = [
-  {
-    participants: ["Elon Musk"],
-    headCount: 1,
-    lastChat: "Doge coin gazua!",
-    id: 1,
-  },
-  {
-    participants: ["Warron Buffet", "Bill Gates"],
-    headCount: 2,
-    lastChat: "Only Jon-bu is life way.",
-    id: 2,
-  },
-];
+import nodemon from "nodemon";
+import Chat from "../models/Chat";
 
-export const chats = (req, res) => {
-  return res.render("chats", { pageTitle: "Chats", rooms });
+export const chats = async (req, res) => {
+  const chatRooms = await Chat.find({});
+  return res.render("chats", {
+    pageTitle: "Chats",
+    chatRooms: [],
+  });
 };
 
-export const chatroom = (req, res) => {
+export const getCreateChatRoom = (req, res) => {
+  return res.render("createchatroom", { pageTitle: "New chat" });
+};
+
+export const postCreateChatRoom = (req, res) => {
+  const { friends } = req.body;
+  const chat = new Chat({
+    title: friends,
+    multiple: friends.split(",").length > 1,
+    participants: {
+      names: friends.split(","),
+      headCount: friends.split(",").length,
+    },
+    dialog: [
+      {
+        sentence: "hello",
+        speaker: "Watson",
+        timestamp: Date.now(),
+        _id: null,
+      },
+    ],
+  });
+  console.log(chat);
+  return res.send("postCreateChatRoom");
+};
+
+export const chatRoom = (req, res) => {
   const { id } = req.params;
-  const room = rooms[id - 1];
   return res.render("chatRoom", {
-    pageTitle: `chat with ${room.title}`,
+    pageTitle: `chat with`,
     chatRoomId: id,
   });
 };

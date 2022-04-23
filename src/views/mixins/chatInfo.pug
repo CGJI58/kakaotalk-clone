@@ -1,15 +1,15 @@
-mixin room(room)
+mixin room(chatRoom)
     div
         h4
-            a(href=`chats/${room.id}`)=room.participants
+            a(href=`chats/${chatRoom.id}`)=chatRoom.participants
             
         ul 
             li
-                h5 #{room.lastChat}
+                h5 #{chatRoom.lastChat}
 
-            if (room.headCount === 1)
+            if (chatRoom.headCount === 1)
                 li Private
                 
             else
-                li #{room.headCount + 1} Participants
+                li #{chatRoom.headCount + 1} Participants
             

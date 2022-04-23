@@ -1,4 +1,5 @@
 import "./db";
+import "./models/Chat";
 import app from "./server";
 
 const PORT = 4001;

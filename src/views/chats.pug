@@ -1,9 +1,12 @@
 extends base
 include mixins/chatInfo
 
+block header 
+    a(href="/chats/createchatroom") New chat
+
 block main
     ul 
-        each room in rooms
-            +room(room)
+        each chatRoom in chatRooms
+            +room(chatRoom)
         else
             li no chats.
