@@ -1,16 +1,11 @@
-extends base
-
-block header
-    nav 
-        ul
-            li 
-                a(href="/join") Join
-            li
-                a(href="/") home
-            li 
-                a(href="/login") Log in
-
+extends home
 
 block main
     form(method="POST")
         input(type="submit" value="Log in")
+        
+block footer
+    nav 
+        ul
+            li 
+                a(href="/join") Join

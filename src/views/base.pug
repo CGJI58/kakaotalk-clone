@@ -5,13 +5,9 @@ html(lang="ko")
         link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     
     body
-
-        header
-            block header
+        include partials/statusbar
 
         main
             block main
 
-        nav
-            ul
-                block navigationBar
+        include partials/navigationbar

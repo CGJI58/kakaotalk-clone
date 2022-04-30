@@ -1,19 +1,16 @@
-extends base
+doctype html 
+html(lang="ko")
+    head 
+        title #{pageTitle} | kakaotalk-clone
+        link(rel="stylesheet" href="https://unpkg.com/mvp.css")
+    
+    body
+        include partials/statusbar
 
-block header
-    ul
-        li
-            a(href="/") home
-        li
-            a(href="/login") Log in
-        li
-            a(href="/users") Friends
-
-block main 
-    span home
-    br
-    span If status is "logged in" --> redirect to the "friends".
-    br
-    span If status is "logged out" --> redirect to the "login".
-    br
-    span userController에서 로그인 상태에 따라서 friends 템플릿을 불러올지, login 템플릿을 불러올지 정하는걸로 하고, home.pug는 지울 것.
+        div If status is "logged in" --> redirect to the "friends".
+        div If status is "logged out" --> redirect to the "login".
+        div User should not see this page.
+        
+        block main
+        
+        block footer
